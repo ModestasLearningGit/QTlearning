@@ -12,12 +12,13 @@ MainWindow::MainWindow(QWidget *parent)
     //connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(changeText()));
 
     //connect used Functor notation : Regular Slots
-    //connect(ui->pushButton,&QPushButton::clicked,this,&MainWindow::changeText);
+    connect(ui->pushButton,&QPushButton::clicked,this,&MainWindow::changeText);
 
     //Functor Notation : Lambdas
-    connect(ui->pushButton,&QPushButton::clicked,[=](){
+    /*connect(ui->pushButton,&QPushButton::clicked,[=](){
             ui->label->setText("LAMBDA HELLO");
     });
+    */
 }
 
 MainWindow::~MainWindow()
